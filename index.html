@@ -9,7 +9,7 @@
   <style>
 :root{--purple:#6b35e8;--yellow:#ffe34d;--cream:#fffdf5;--ink:#19151f;--scene-bg:#e8d9ff;--scene-ink:#19151f;--floor-level:23%;--runner-aspect:.6666667;--runner-size:clamp(180px,53vw,280px);--final-runner-scale:1.18;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--cream);font-synthesis:none}
 *{box-sizing:border-box}html{scroll-behavior:auto}body{margin:0;overflow-x:clip}a,button{-webkit-tap-highlight-color:transparent}a{color:inherit}button{font:inherit}button,a{touch-action:manipulation}button:focus-visible,a:focus-visible,[tabindex="-1"]:focus-visible{outline:3px solid currentColor;outline-offset:6px}button{cursor:pointer}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}[hidden]{display:none!important}
-.story{height:520vh;height:520svh;position:relative}.stage{position:sticky;top:0;height:100vh;height:100svh;min-height:480px;overflow:hidden;isolation:isolate;background:var(--scene-bg);color:var(--scene-ink)}.stage__wash{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 45%,#ffffff10,transparent 65%)}.frame{position:relative;height:100%;max-width:1500px;margin:auto;--gutter:clamp(20px,4vw,64px)}
+.story{height:940vh;height:940svh;position:relative}.stage{position:sticky;top:0;height:100vh;height:100svh;min-height:480px;overflow:hidden;isolation:isolate;background:var(--scene-bg);color:var(--scene-ink)}.stage__wash{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 45%,#ffffff10,transparent 65%)}.frame{position:relative;height:100%;max-width:1500px;margin:auto;--gutter:clamp(20px,4vw,64px)}
 .masthead{position:absolute;z-index:30;top:max(21px,env(safe-area-inset-top));left:var(--gutter);right:var(--gutter);display:flex;align-items:flex-start;justify-content:space-between;gap:14px}.brand{font-size:clamp(17px,2vw,24px);font-weight:800;letter-spacing:-1.1px;text-decoration:none;line-height:1.05;white-space:nowrap}.brand span{display:block;letter-spacing:-.6px;font-size:.77em;margin-top:4px}.masthead__actions{display:flex;align-items:center;gap:20px}.demo-link{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font-size:14px;font-weight:700;border:1.5px solid currentColor;padding:10px 13px;border-radius:100px;white-space:nowrap}.demo-link span[aria-hidden]{font-size:20px;line-height:.8}.skip-story{background:none;border:0;color:inherit;font-size:12px;padding:12px 0}.demo-link:hover{background:#ffffff22}.skip-story:hover{text-decoration:underline}
 .story-cards{position:absolute;inset:0;z-index:5;pointer-events:none}.bubble{position:absolute;left:var(--gutter);top:17%;width:calc(100% - var(--gutter)*2);max-width:610px;border-radius:32px;padding:25px 26px;transform-origin:50% 80%;will-change:transform,opacity}.bubble--intro{top:13.8%;background:var(--purple);color:white;box-shadow:inset 0 2px 0 #ffffff20,0 8px 0 #5526c92b}.bubble__eyebrow{font-size:clamp(22px,6.9vw,36px);font-weight:900;letter-spacing:-.8px;line-height:1.02;margin:0 0 20px;max-width:100%}.bubble h1{font-size:clamp(45px,14vw,82px);line-height:.94;letter-spacing:-2.7px;margin:0;font-weight:900}.bubble__tail{position:absolute;width:36px;height:40px;right:30px;bottom:-25px;background:var(--purple);clip-path:polygon(0 0,100% 0,12% 100%)}.bubble--task{top:20%;font-size:clamp(48px,15.8vw,90px);line-height:.94;letter-spacing:-2px;font-weight:900;opacity:0;min-height:clamp(198px,60vw,258px);display:flex;align-items:center;padding:32px 24px;border-radius:34px;border:1px solid #ffffff55;box-shadow:inset 0 3px 0 #ffffffa6,inset -3px -4px 0 #2f1d3d0b,0 8px 0 var(--tile-edge,#c4bacd),0 13px 0 #38166633,0 25px 30px #260a5433;transform:translate3d(-70px,0,0) rotate(-5deg)}.bubble--white{--tile-edge:#c8bfce;background:linear-gradient(145deg,#fffef9,#f6f2ed);color:var(--ink)}.bubble--yellow{--tile-edge:#d8b92b;background:linear-gradient(145deg,#fff16e,#ffe34d 55%,#ffda28);color:var(--ink)}.bubble--payment{font-size:clamp(38px,12.4vw,76px);letter-spacing:-2px}.bubble--task:after{content:"";position:absolute;bottom:-17px;right:40px;width:29px;height:25px;background:inherit;clip-path:polygon(0 0,100% 0,15% 100%)}
 .floor{position:absolute;bottom:0;left:calc(-1 * max(0px,(100vw - 1500px)/2));width:100vw;height:var(--floor-level);background:var(--cream);z-index:2}.floor__line{position:absolute;top:0;width:100%;height:1px;background:#fff9}.floor__dashes{position:absolute;top:34px;left:-10%;width:120%;height:4px;background:repeating-linear-gradient(to right,#e3d6f5 0 50px,transparent 50px 160px);opacity:0;will-change:transform}.speed-lines{position:absolute;z-index:6;left:14%;bottom:35%;width:72px;opacity:0;will-change:transform,opacity}.speed-lines i{display:block;height:7px;border-radius:9px;margin:10px 0;background:linear-gradient(90deg,transparent,#d3b6ff)}.speed-lines i:nth-child(2){width:72%}.speed-lines i:nth-child(3){width:50%;margin-left:16%}
@@ -67,6 +67,11 @@
 .door-sign__arrow{transform:translateY(-50%)}
 @media(max-height:650px) and (max-width:699px){.door-sign__small{margin-top:5px}}
 .runner__sprite{clip-path:inset(0 2% 0 4%)}
+/* Leave a distinct vertical area for the hero on phones with browser chrome. */
+@media(max-width:699px) and (min-height:651px){
+  .bubble--intro{top:12%}
+  .bubble--intro .bubble__eyebrow{font-size:clamp(22px,6.2vw,27px);margin-bottom:14px}
+}
 
 </style>
   <style>
@@ -203,9 +208,9 @@
   // A fictional elapsed-time scenario INCLUDING waits for replies/approval.
   // Not a measured benchmark, SLA, savings claim or real countdown.
   const PHASES = [
-    {start: .14, end: .31, minutes: 30},
-    {start: .35, end: .52, minutes: 60},
-    {start: .56, end: .71, minutes: 90}
+    {start: .141, end: .29, minutes: 30},
+    {start: .361, end: .51, minutes: 60},
+    {start: .581, end: .73, minutes: 90}
   ];
   const clamp = n => Math.max(0, Math.min(1, n));
   const between = (p, a, b) => clamp((p - a) / (b - a));
@@ -272,6 +277,7 @@
   const dashes = document.getElementById('floor-dashes');
   const outro = document.getElementById('outro');
   const outroTitle = document.getElementById('outro-title');
+  const outroActions = document.querySelector('.outro__actions');
   const progress = document.getElementById('progress');
   const segments = [...progress.children];
   const hint = document.getElementById('scroll-hint');
@@ -300,6 +306,9 @@
 
   function measure() {
     const rect = story.getBoundingClientRect();
+    const runnerStyle = getComputedStyle(runner);
+    const floorRatio = parseFloat(runnerStyle.getPropertyValue('--floor-level')) / 100;
+    const introBottom = intro.offsetTop + intro.offsetHeight;
     metrics = {
       width: frame.clientWidth,
       stageHeight: stage.clientHeight,
@@ -310,7 +319,13 @@
       runnerHeight: runner.offsetHeight,
       doorWidth: door.offsetWidth,
       doorHeight: door.offsetHeight,
-      finalScale: parseFloat(getComputedStyle(runner).getPropertyValue('--final-runner-scale')) || 1.1
+      finalScale: parseFloat(runnerStyle.getPropertyValue('--final-runner-scale')) || 1.1,
+      // Use layout boxes rather than transformed/animated bounds so reverse
+      // scrolling and measuring at the final frame produce the same result.
+      groundY: stage.clientHeight * (1 - floorRatio) + 8,
+      introBottom,
+      finalTitleBottom: outroTitle.offsetTop + outroTitle.offsetHeight,
+      finalActionsTop: outroActions.offsetTop
     };
   }
 
@@ -332,13 +347,14 @@
 
   function drawCard(element, p, start, end, rotation) {
     const local = between(p, start, end);
-    const enter = ease(between(local, 0, .19));
-    const leave = ease(between(local, .77, 1));
+    const enter = ease(between(local, 0, .14));
+    const leave = ease(between(local, .86, 1));
     const opacity = enter * (1 - leave);
-    const x = mix(-58, 0, enter) + leave * 95;
-    const y = mix(18, -8, local);
+    // Hold the card completely still for the middle 72% of its chapter.
+    const x = mix(-38, 0, enter) + leave * 58;
+    const y = mix(14, 0, enter) - leave * 12;
     element.style.opacity = opacity.toFixed(3);
-    element.style.transform = `translate3d(${x}px,${y}px,0) rotate(${rotation + local * 3}deg)`;
+    element.style.transform = `translate3d(${x}px,${y}px,0) rotate(${rotation + (enter - 1) * 2 + leave * 2}deg)`;
   }
 
   function render() {
@@ -354,17 +370,18 @@
     document.documentElement.classList.toggle('reduced-motion', reduced);
     window.ChaseTimer.render(p, reduced);
 
-    const introExit = ease(between(p, .04, .15));
+    const introExit = ease(between(p, .065, .11));
     intro.style.opacity = (1 - introExit).toFixed(3);
     intro.style.transform = `translate3d(${-introExit * 85}px,${-introExit * 25}px,0) rotate(${-introExit * 5}deg)`;
-    drawCard(tasks[0], p, .105, .365, -5);
-    drawCard(tasks[1], p, .325, .59, 5);
-    drawCard(tasks[2], p, .545, .765, -4);
+    // Separate chapters: no crossfade of two different task labels.
+    drawCard(tasks[0], p, .11, .33, -5);
+    drawCard(tasks[1], p, .33, .55, 5);
+    drawCard(tasks[2], p, .55, .77, -4);
 
-    const doorReveal = ease(between(p, .70, .77));
+    const doorReveal = ease(between(p, .77, .815));
     const doorExit = ease(between(p, .93, .955));
-    const doorOpen = ease(between(p, .735, .785));
-    const doorClose = ease(between(p, .875, .915));
+    const doorOpen = ease(between(p, .79, .83));
+    const doorClose = ease(between(p, .90, .93));
     for (const layer of [door, doorFront]) {
       layer.style.opacity = (doorReveal * (1 - doorExit)).toFixed(3);
       layer.style.transform = `translate3d(calc(-50% + ${(1 - doorReveal) * 90}px),0,0)`;
@@ -377,42 +394,53 @@
     const arrivalX = desktop ? .55 : .24;
     const doorX = desktop ? .74 : .56;
     let x = mix(startX, chaseX, ease(between(p, .06, .20)));
-    x = mix(x, arrivalX, ease(between(p, .68, .78)));
-    const enterDoor = ease(between(p, .79, .87));
+    x = mix(x, arrivalX, ease(between(p, .735, .825)));
+    const enterDoor = ease(between(p, .835, .895));
     const finalHero = ease(between(p, .96, .995));
     const distance = Math.max(0, p - .065) * 144;
     const spriteIndex = p < .065 || reduced ? 0 : Math.floor(distance) % 8;
-    const hop = p > .065 && p < .87 ? -Math.abs(Math.sin(distance * Math.PI / 2)) * 4 : 0;
+    const hop = p > .065 && p < .895 ? -Math.abs(Math.sin(distance * Math.PI / 2)) * 4 : 0;
     let opacity = 1;
     // Recede before reaching the door. Fit the whole run cycle inside the
     // opening on both short desktop windows and narrow mobile screens.
     const doorwayScale = Math.min(.70,
       (metrics.doorHeight - 16) * .82 / metrics.runnerHeight,
       (metrics.doorWidth - 20) * .92 / metrics.runnerWidth);
-    const approach = ease(between(p, .68, .78));
+    const approach = ease(between(p, .735, .825));
     const chaseScale = desktop ? 1 : Math.min(1, metrics.stageHeight * .37 / metrics.runnerHeight);
-    const runningScale = mix(1, chaseScale, ease(between(p, .06, .18)));
+    const introScale = desktop ? 1 : Math.min(1,
+      Math.max(0, metrics.groundY - metrics.introBottom - 16) / metrics.runnerHeight);
+    const runningScale = mix(introScale, chaseScale, ease(between(p, .13, .22)));
     let scale = mix(runningScale, doorwayScale, approach) * mix(1, .88, enterDoor);
     const rightJambX = doorX * metrics.width + metrics.doorWidth / 2 - 10;
     // Cross the visible interior, then disappear behind the RIGHT jamb.
     // The foreground leaf closes only after the entire silhouette has passed it.
     const exitX = (rightJambX + metrics.runnerWidth * doorwayScale * .88 / 2 + 4) / metrics.width;
     x = mix(x, exitX, enterDoor);
-    // Scaling around 90% height would otherwise lift his feet off the floor.
-    const groundCorrection = metrics.runnerHeight * .10 * (1 - scale);
+    let bottom = '';
     if (p >= .955) {
       opacity = finalHero;
       x = desktop ? .72 : .51;
       scale = metrics.finalScale;
+      bottom = '18%';
+      if (!desktop) {
+        const footY = metrics.finalActionsTop - 18;
+        const topLimit = metrics.finalTitleBottom + 18;
+        scale = Math.min(scale, Math.max(0, footY - topLimit) / metrics.runnerHeight);
+        bottom = `${metrics.stageHeight - footY}px`;
+      }
     }
+    // Keep the full sprite box anchored to its floor/CTA clearance at any scale.
+    // Desktop final composition retains its existing placement.
+    const groundCorrection = p >= .955 && desktop ? 0 : metrics.runnerHeight * .10 * (1 - scale);
     runner.style.left = `${x * metrics.width}px`;
     runner.style.opacity = opacity.toFixed(3);
-    runner.style.transform = `translate3d(-50%,${p >= .955 ? 0 : hop + groundCorrection}px,0) scale(${scale})`;
-    runner.style.bottom = p >= .955 ? (desktop ? '18%' : '28%') : '';
+    runner.style.transform = `translate3d(-50%,${(p >= .955 ? 0 : hop) + groundCorrection}px,0) scale(${scale})`;
+    runner.style.bottom = bottom;
     // Keep the figure visible across the opening; occlude only at the far jamb.
     // Geometry is derived from progress so reversing scroll reverses the scene.
     let hiddenFromRight = 0;
-    if (p >= .78 && p < .955) {
+    if (p >= .835 && p < .955) {
       const runnerRight = x * metrics.width + metrics.runnerWidth * scale / 2;
       hiddenFromRight = clamp((runnerRight - rightJambX) / (metrics.runnerWidth * scale));
     }
@@ -420,7 +448,7 @@
     shadow.style.transform = `scale(${1 + hop / 35},.55)`;
     setPose(p < .065 ? 'idle' : p >= .955 ? 'relieved' : 'running', spriteIndex);
 
-    const chase = ease(between(p, .07, .17)) * (1 - ease(between(p, .70, .79)));
+    const chase = ease(between(p, .07, .17)) * (1 - ease(between(p, .735, .825)));
     speed.style.opacity = (chase * .8).toFixed(3);
     speed.style.transform = `translate3d(${-Math.sin(distance * .6) * 10}px,0,0)`;
     dashes.style.opacity = (chase * .7).toFixed(3);
@@ -439,7 +467,7 @@
     }
     stage.classList.toggle('is-final', finalVisible);
 
-    const nextHint = p < .08 ? 'Листай — и побежали ↓' : p < .70 ? 'Листай дальше ↓' : 'Ещё немного ↓';
+    const nextHint = p < .08 ? 'Листай — и побежали ↓' : p < .77 ? 'Листай дальше ↓' : 'Ещё немного ↓';
     if (nextHint !== currentHint) { hint.textContent = nextHint; currentHint = nextHint; }
     segments.forEach((segment, i) => segment.style.setProperty('--fill', clamp(p * 6 - i).toFixed(3)));
     const rounded = Math.round(p * 100);
@@ -464,6 +492,12 @@
   window.addEventListener('scroll', schedule, {passive: true});
   window.addEventListener('resize', resize, {passive: true});
   window.addEventListener('pageshow', resize);
+  if (window.visualViewport) window.visualViewport.addEventListener('resize', resize, {passive: true});
+  if (window.ResizeObserver) {
+    const layoutObserver = new ResizeObserver(resize);
+    [frame, intro, outroTitle, outroActions].forEach(element => layoutObserver.observe(element));
+  }
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(resize);
   const onMotionChange = () => { measure(); render(); measure(); };
   if (reducedMotion.addEventListener) reducedMotion.addEventListener('change', onMotionChange);
   else reducedMotion.addListener(onMotionChange);
